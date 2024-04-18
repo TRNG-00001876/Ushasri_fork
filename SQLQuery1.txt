@@ -1,0 +1,71 @@
+use master;
+create database Employee;
+
+use employee;
+create table Employee
+(
+EmployeeId int  not null,
+FirstName varchar(50) not null,
+LastName varchar(50) not null,
+EmailId varchar(50) unique not null,
+DateOfBirth date not null,
+DepartmentId int ,
+
+
+);
+drop table Employee
+//primarykey
+ALTER TABLE employee ADD CONSTRAINT pk_constraint_name PRIMARY KEY (EmployeeId);
+ALTER TABLE employee ADD CONSTRAINT pk_constraint_name PRIMARY KEY (departmentid);
+
+// drop primarykey
+ALTER TABLE employee  DROP CONSTRAINT pk_constraint_name
+
+
+create table Departments
+(
+EmployeeId int  not null,
+Departmentname varchar(20) not null
+);
+select * from Departments
+drop table Departments
+
+
+select * from Employee
+
+
+alter table Employee add phonenumber varchar(20) not null
+
+
+ALTER TABLE employee ADD CONSTRAINT pk_employee_email PRIMARY KEY (employeeid, emailid);
+alter table employee drop  CONSTRAINT pk_employee_email
+
+ALTER TABLE departments
+ADD CONSTRAINT fk_department_id
+FOREIGN KEY (employeeid)
+REFERENCES employee (employeeid)
+
+
+INSERT INTO Employee
+VALUES (1, 'usha','sri','donhart@gmail.com','2002-03-20',001,'1234567894')
+INSERT INTO Employee
+VALUES
+(2,'vikram','varma','vikram@gmail.com','2001-08-22',2,'7894561236'),
+(3,'sai','varma','sai@gmail.com','2001-10-18',3,'567891235');
+
+alter table employee add  phonenumber  varchar(10) 
+
+insert into Employee (phonenumber) values(1234567890)
+DELETE FROM Employee;
+
+UPDATE Employee
+SET phonenumber='984576321'
+WHERE EmployeeId = 1;
+
+
+INSERT INTO Employee
+VALUES (4, 'uma','sri','donhart@gmail.com','2002-03-20',004,'741258963')
+
+
+INSERT INTO Departments
+VALUES (3,'hr')
