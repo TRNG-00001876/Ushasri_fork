@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .forms
+    {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+
+    }
+    .he
+    {
+        text-align: center;
+    }
+   </style>
+</head>
+<body>
+    
+        <h2 class="he">Sample Form</h2>
+        <form class="forms" onsubmit="return loginUser()">
+            <label for="username">Enter the name: </label>
+            <input type="text" id="username" placeholder="Enter the name"><br>
+            <label for="password">Enter password: </label>
+            <input type="password" id="password" placeholder="Enter the password"><br>
+            <input type="submit" value="submit">
+    
+        </form>
+        <script>
+            function loginUser() {
+                // Get input values
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+            
+                // Simulate authentication (replace with actual authentication logic)
+                if (username === "username" && password === "password") {
+                    alert("Login successful!");
+                    return true; // Allow form submission
+                } else {
+                    alert("Invalid username or password. Please try again.");
+                    return false; // Prevent form submission
+                }
+            }
+            </script>
+            
+    
+    
+               
+    
+</body>
+</html>
