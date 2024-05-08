@@ -1,0 +1,247 @@
+// Hellocallback((bye)=>
+//     {
+//         console.log("hel");
+//     }
+    
+// );
+// function Hellocallback(callback)
+// {
+//     setTimeout(()=>{
+//         console.log("hello");
+//     callback();
+
+//     },3000
+
+//     );
+
+    
+// }
+
+
+//------------------------------------------------------------------------------------------------------
+//callback
+
+// add((display)=>
+//     {
+//         console.log("finishedd");
+//     }
+// );
+
+// function add(callback)
+// {
+//     setTimeout(()=>
+//         {
+//             console.log("adding");
+//             callback();
+//         },3000
+//     );
+// }
+// 2.example
+ 
+// add(display,1,2)
+
+// function add(callback , x, y)
+// {
+//     let result=x+y;
+//     setTimeout(()=>
+//         {
+// callback(result);
+//         },20
+//     );
+// }
+// function display(result)
+// {
+//     console.log(result);
+// }
+
+
+//------------------------------------------------------------------
+// 3.callback hell
+// function hey(callback)
+// {
+//     setTimeout(()=>
+//         {
+//             console.log("welcome");
+//             callback();
+//         },20
+// );
+// }
+// function bye(callback)
+// {
+//     setTimeout(()=>
+//         {
+
+//             console.log("bye");
+//             callback()
+//         },20
+//     );
+// }
+// hey(()=>
+//     {
+//         bye(()=>
+//             {
+//                 console.log("finish");
+//             });
+//     });
+
+
+//---------------------------------------------------------
+//4. promises
+
+
+// function dog()
+// {
+//     return new Promise((reslove, reject)=>
+//         {
+//             setTimeout(()=>{
+//                 const walk=true;
+//               if(walk)
+//                 {
+//                     reslove("dog is waling");
+//                 }
+//                 else
+//                 {
+//                     reject("is not walking");
+//                 }
+
+//             }
+                
+
+//         );
+//         }
+// );
+// }
+// function cat()
+// {
+//     return new Promise((reslove, reject)=>
+//         {
+//             setTimeout(()=>
+//                 {const slepp=true;
+//                     if(slepp)
+//                       {
+//                           reslove("cat is sleeping");
+//                       }
+//                       else
+//                       {
+//                           reject("is not sleeping");
+//                       }
+
+//                 }
+                
+
+//         );
+//         }
+// );
+// }
+
+// dog().then(value=>
+//     {
+//         console.log(value);return cat();
+//     }
+// )
+// .then(value=>
+//     {
+//         console.log(value); console.log("finish");
+//     }
+// )
+// .catch(error=>{
+//     console.error(error)
+// }
+//     );
+
+//-----------------------------------------
+//5.Async/await
+
+// function dog()
+// {
+//     return new Promise((reslove, reject)=>
+//         {
+//             setTimeout(()=>{
+//                 const walk=true;
+//               if(walk)
+//                 {
+//                     reslove("dog is waling");
+//                 }
+//                 else
+//                 {
+//                     reject("is not walking");
+//                 }
+
+//             }
+                
+
+//         );
+//         }
+// );
+// }
+// function cat()
+// {
+//     return new Promise((reslove, reject)=>
+//         {
+//             setTimeout(()=>
+//                 {const slepp=true;
+//                     if(slepp)
+//                       {
+//                           reslove("cat is sleeping");
+//                       }
+//                       else
+//                       {
+//                           reject("is not sleeping");
+//                       }
+
+//                 }
+                
+
+//         );
+//         }
+// );
+// }
+// async function display()
+// {
+//     try
+//     {
+//       const dogresult=await dog()
+//       console.log(dogresult);
+//       const catresult=await cat()
+//       console.log(catresult);
+
+
+//     }
+//     catch(error)
+//     {
+//         console.error(error);
+//     }
+// }
+// display()
+
+
+//-------------------------------------------------------------------------------------------------
+//6.fect api
+// async function  feching()
+// {
+//     try{
+
+//         const response=await fetch("https://goweather.herokuapp.com/weather/Curitiba");
+
+//         if(! response.ok)
+//             {
+//                 throw new Error("could not feched");
+                 
+//             }
+//             else{
+//              const data=await response.json();
+//             console.log(data);
+            
+//             }
+        
+
+
+
+//     }
+//     catch(error)
+//     {
+//         console.error(error);
+//     }
+
+// };
+// feching()
